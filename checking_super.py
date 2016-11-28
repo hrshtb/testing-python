@@ -18,7 +18,8 @@ class TestingMetaClass(type):
     def __init__(cls, base_classes=[], attr_dict={}):
         self.base_classes = base_classes
 
-    def __new__(cls):
+    def __new__(cls, name, bases, attrs):
+	super.__new__(cls, name, bases, attrs)
 
     def __call__(self, *args, **kwargs):
 
